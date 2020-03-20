@@ -3,10 +3,17 @@ import { connect } from 'react-redux'
 
 class Dashboard extends Component{
 	render(){
-		console.log(this.props)
 		return(
 			<div>
-				Dashboard
+				<h3 className="center">Timline</h3>
+				<ul className="dashboad-list">
+					{this.props.tweetsIds.map(id => (
+
+						<li key={id}>
+							<div>Tweet ID: {id}</div>
+						</li>
+						))}
+				</ul>
 			</div>
 			)
 	}
