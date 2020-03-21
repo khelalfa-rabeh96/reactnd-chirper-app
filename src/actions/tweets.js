@@ -1,5 +1,5 @@
 import { saveLikeToggle, saveTweet } from '../utils/api'
-import {showLoadnig, hideLoadnig } from 'react-redux-loading'
+import {showLoading, hideLoading } from 'react-redux-loading'
 
 export const RECEIVE_TWEETS = 'RECEIVE_TWEETS'
 export const TOGGLE_TWEET  = 'TOGGLE_TWEET'
@@ -45,7 +45,7 @@ export function handleAddTweet(text, replyingTo){
 	return (dispatch, getState) => {
 		const { authedUser } = getState()
 
-		dispatch(showLoadnig())
+		dispatch(showLoading())
 
 		return saveTweet({
 			text,
@@ -53,6 +53,6 @@ export function handleAddTweet(text, replyingTo){
 			replyingTo
 		})
 		.then(({tweet}) => dispatch(addTweet(tweet)))
-		.then(() => dispatch(hideLoadnig()))
+		.then(() => dispatch(hideLoading()))
 	}
 }
