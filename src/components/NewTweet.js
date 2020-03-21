@@ -21,7 +21,6 @@ class NewTweet extends Component{
 		
 		dispatch(handleAddTweet(text, id))
 
-		console.log('New Tweet: ', text)
 		this.setState(() => ({
 			text: ''
 		}))
