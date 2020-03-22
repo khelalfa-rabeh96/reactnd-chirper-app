@@ -23,6 +23,10 @@ class NewTweet extends Component{
 		
 		dispatch(handleAddTweet(text, id))
 
+	{/*  IF this tweet is from  a tweet page 
+		 Then it  will be  replying to another tweet
+		 Then Stay in the tweet page 
+	 */}
 		this.setState(() => ({
 			text: '',
 			toHome: id ? false : true
